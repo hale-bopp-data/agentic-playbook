@@ -1,0 +1,1757 @@
+{
+  "version": 1,
+  "createdAt": "2026-03-10T17:47:48.060634+00:00",
+  "vaultPaths": [
+    "C:/old/easyway/agentic-playbook"
+  ],
+  "docs": 52,
+  "topK": 5,
+  "minScore": 0.05,
+  "queriesFile": "C:/old/easyway/agentic-playbook/evidence/queries.yaml",
+  "summary": {
+    "queries": 42,
+    "avg_top1_score": 0.2838,
+    "avg_mean_score": 0.1616,
+    "coverage": 1.0,
+    "queries_with_results": 42,
+    "precision_at_k": 0.1869,
+    "recall_at_k": 0.881,
+    "evaluated_queries": 42
+  },
+  "queries": [
+    {
+      "text": "How do I prevent secrets from leaking into git?",
+      "expected": [
+        "patterns/pre-commit-safety.md"
+      ],
+      "results": [
+        {
+          "path": "patterns/pre-commit-safety.md",
+          "title": "Pre-commit Safety Net",
+          "score": 0.1123
+        },
+        {
+          "path": "guides/secrets-management.md",
+          "title": "secrets-management",
+          "score": 0.0974
+        },
+        {
+          "path": "faq/local-vs-server.md",
+          "title": "local-vs-server",
+          "score": 0.0813
+        },
+        {
+          "path": "README.md",
+          "title": "Agentic Playbook",
+          "score": 0.0737
+        },
+        {
+          "path": "guides/semaphore-protocol.md",
+          "title": "semaphore-protocol",
+          "score": 0.0656
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.1123,
+        "mean_score": 0.0861,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "What happens when two AI agents edit the same file?",
+      "expected": [
+        "patterns/repo-lock.md"
+      ],
+      "results": [
+        {
+          "path": "patterns/repo-lock.md",
+          "title": "Repo Lock",
+          "score": 0.2282
+        },
+        {
+          "path": "README.md",
+          "title": "Agentic Playbook",
+          "score": 0.1896
+        },
+        {
+          "path": "reddit/draft-posts.md",
+          "title": "Reddit Draft Posts",
+          "score": 0.1667
+        },
+        {
+          "path": "guides/multi-agent-coordination.md",
+          "title": "Multi-Agent Coordination",
+          "score": 0.1609
+        },
+        {
+          "path": "evidence/case-studies.md",
+          "title": "Case Studies",
+          "score": 0.0994
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.2282,
+        "mean_score": 0.169,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I make sure PRs are linked to work items?",
+      "expected": [
+        "patterns/traceability-gate.md"
+      ],
+      "results": [
+        {
+          "path": "patterns/traceability-gate.md",
+          "title": "Traceability Gate",
+          "score": 0.1677
+        },
+        {
+          "path": "evidence/case-studies.md",
+          "title": "Case Studies",
+          "score": 0.0961
+        },
+        {
+          "path": "README.md",
+          "title": "Agentic Playbook",
+          "score": 0.0795
+        },
+        {
+          "path": "guides/multi-agent-coordination.md",
+          "title": "Multi-Agent Coordination",
+          "score": 0.0613
+        },
+        {
+          "path": "guides/semaphore-protocol.md",
+          "title": "semaphore-protocol",
+          "score": 0.0562
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.1677,
+        "mean_score": 0.0922,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "What branch should my PR target?",
+      "expected": [
+        "patterns/branch-flow-guard.md"
+      ],
+      "results": [
+        {
+          "path": "patterns/branch-flow-guard.md",
+          "title": "Branch Flow Guard",
+          "score": 0.2535
+        },
+        {
+          "path": "evidence/case-studies.md",
+          "title": "Case Studies",
+          "score": 0.1429
+        },
+        {
+          "path": "faq/how-to-add-principle.md",
+          "title": "how-to-add-principle",
+          "score": 0.1339
+        },
+        {
+          "path": "guides/multi-agent-coordination.md",
+          "title": "Multi-Agent Coordination",
+          "score": 0.1318
+        },
+        {
+          "path": "guides/git-workflow-for-teams.md",
+          "title": "git-workflow-for-teams",
+          "score": 0.1303
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.2535,
+        "mean_score": 0.1585,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I fix bugs without creating new ones?",
+      "expected": [
+        "patterns/structural-fix.md"
+      ],
+      "results": [
+        {
+          "path": "patterns/structural-fix.md",
+          "title": "Structural Fix",
+          "score": 0.1703
+        },
+        {
+          "path": "patterns/antifragile-fix.md",
+          "title": "antifragile-fix",
+          "score": 0.1702
+        },
+        {
+          "path": "recipes/create-wiki-page.md",
+          "title": "create-wiki-page",
+          "score": 0.1167
+        },
+        {
+          "path": "patterns/traceability-gate.md",
+          "title": "Traceability Gate",
+          "score": 0.0886
+        },
+        {
+          "path": "guides/secrets-management.md",
+          "title": "secrets-management",
+          "score": 0.0882
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.1703,
+        "mean_score": 0.1268,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "What are the GEDI principles?",
+      "expected": [
+        "principles/index.md"
+      ],
+      "results": [
+        {
+          "path": "guides/setting-up-gedi.md",
+          "title": "Setting Up GEDI",
+          "score": 0.5396
+        },
+        {
+          "path": "faq/what-is-gedi.md",
+          "title": "what-is-gedi",
+          "score": 0.2382
+        },
+        {
+          "path": "faq/how-to-add-principle.md",
+          "title": "how-to-add-principle",
+          "score": 0.2064
+        },
+        {
+          "path": "reddit/draft-posts.md",
+          "title": "Reddit Draft Posts",
+          "score": 0.1824
+        },
+        {
+          "path": "principles/index.md",
+          "title": "Principles",
+          "score": 0.1574
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.5396,
+        "mean_score": 0.2648,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How did the project start?",
+      "expected": [
+        "THE-JOURNEY.md"
+      ],
+      "results": [
+        {
+          "path": "guides/first-agent-project.md",
+          "title": "Your First Agent Project",
+          "score": 0.2108
+        },
+        {
+          "path": "README.md",
+          "title": "Agentic Playbook",
+          "score": 0.0853
+        },
+        {
+          "path": "faq/why-rag-for-agents.md",
+          "title": "why-rag-for-agents",
+          "score": 0.0639
+        },
+        {
+          "path": "recipes/ingest-wiki-to-qdrant.md",
+          "title": "ingest-wiki-to-qdrant",
+          "score": 0.0639
+        },
+        {
+          "path": "guides/semaphore-protocol.md",
+          "title": "semaphore-protocol",
+          "score": 0.059
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.2108,
+        "mean_score": 0.0966,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hits": 0
+      }
+    },
+    {
+      "text": "What real problems did the team encounter?",
+      "expected": [
+        "evidence/case-studies.md"
+      ],
+      "results": [
+        {
+          "path": "README.md",
+          "title": "Agentic Playbook",
+          "score": 0.0809
+        },
+        {
+          "path": "THE-JOURNEY.md",
+          "title": "The Journey",
+          "score": 0.0721
+        },
+        {
+          "path": "guides/first-agent-project.md",
+          "title": "Your First Agent Project",
+          "score": 0.0604
+        },
+        {
+          "path": "principles/index.md",
+          "title": "Principles",
+          "score": 0.0518
+        },
+        {
+          "path": "patterns/traceability-gate.md",
+          "title": "Traceability Gate",
+          "score": 0.051
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.0809,
+        "mean_score": 0.0632,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hits": 0
+      }
+    },
+    {
+      "text": "How do I set up GEDI in my project?",
+      "expected": [
+        "guides/setting-up-gedi.md"
+      ],
+      "results": [
+        {
+          "path": "guides/setting-up-gedi.md",
+          "title": "Setting Up GEDI",
+          "score": 0.3424
+        },
+        {
+          "path": "recipes/setup-qdrant-local.md",
+          "title": "setup-qdrant-local",
+          "score": 0.2033
+        },
+        {
+          "path": "recipes/ssh-gateway-setup.md",
+          "title": "ssh-gateway-setup",
+          "score": 0.2029
+        },
+        {
+          "path": "faq/how-to-add-principle.md",
+          "title": "how-to-add-principle",
+          "score": 0.1654
+        },
+        {
+          "path": "patterns/session-lifecycle.md",
+          "title": "session-lifecycle",
+          "score": 0.1307
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.3424,
+        "mean_score": 0.2089,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I build my first AI agent?",
+      "expected": [
+        "guides/first-agent-project.md"
+      ],
+      "results": [
+        {
+          "path": "guides/first-agent-project.md",
+          "title": "Your First Agent Project",
+          "score": 0.2963
+        },
+        {
+          "path": "THE-JOURNEY.md",
+          "title": "The Journey",
+          "score": 0.155
+        },
+        {
+          "path": "patterns/wiki-driven-agents.md",
+          "title": "wiki-driven-agents",
+          "score": 0.1105
+        },
+        {
+          "path": "README.md",
+          "title": "Agentic Playbook",
+          "score": 0.102
+        },
+        {
+          "path": "evidence/case-studies.md",
+          "title": "Case Studies",
+          "score": 0.0936
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.2963,
+        "mean_score": 0.1515,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "Which embedding model should I use for RAG?",
+      "expected": [
+        "guides/choosing-embedding-model.md"
+      ],
+      "results": [
+        {
+          "path": "guides/choosing-embedding-model.md",
+          "title": "Choosing an Embedding Model for RAG",
+          "score": 0.4305
+        },
+        {
+          "path": "guides/rag-pipeline-basics.md",
+          "title": "RAG Pipeline Basics",
+          "score": 0.2438
+        },
+        {
+          "path": "faq/why-rag-for-agents.md",
+          "title": "why-rag-for-agents",
+          "score": 0.1661
+        },
+        {
+          "path": "recipes/create-wiki-page.md",
+          "title": "create-wiki-page",
+          "score": 0.1128
+        },
+        {
+          "path": "recipes/debug-rag-results.md",
+          "title": "debug-rag-results",
+          "score": 0.1036
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.4305,
+        "mean_score": 0.2114,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How does a RAG pipeline work?",
+      "expected": [
+        "guides/rag-pipeline-basics.md"
+      ],
+      "results": [
+        {
+          "path": "guides/rag-pipeline-basics.md",
+          "title": "RAG Pipeline Basics",
+          "score": 0.2878
+        },
+        {
+          "path": "faq/why-rag-for-agents.md",
+          "title": "why-rag-for-agents",
+          "score": 0.2263
+        },
+        {
+          "path": "patterns/traceability-gate.md",
+          "title": "Traceability Gate",
+          "score": 0.1673
+        },
+        {
+          "path": "guides/choosing-embedding-model.md",
+          "title": "Choosing an Embedding Model for RAG",
+          "score": 0.1337
+        },
+        {
+          "path": "guides/semaphore-protocol.md",
+          "title": "semaphore-protocol",
+          "score": 0.0919
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.2878,
+        "mean_score": 0.1814,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do multiple agents coordinate?",
+      "expected": [
+        "guides/multi-agent-coordination.md"
+      ],
+      "results": [
+        {
+          "path": "guides/wiki-as-knowledge-base.md",
+          "title": "wiki-as-knowledge-base",
+          "score": 0.119
+        },
+        {
+          "path": "faq/why-rag-for-agents.md",
+          "title": "why-rag-for-agents",
+          "score": 0.1172
+        },
+        {
+          "path": "patterns/repo-lock.md",
+          "title": "Repo Lock",
+          "score": 0.1093
+        },
+        {
+          "path": "guides/multi-agent-coordination.md",
+          "title": "Multi-Agent Coordination",
+          "score": 0.1028
+        },
+        {
+          "path": "guides/semaphore-protocol.md",
+          "title": "semaphore-protocol",
+          "score": 0.083
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.119,
+        "mean_score": 0.1063,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I design a connection registry?",
+      "expected": [
+        "guides/connection-registry-design.md"
+      ],
+      "results": [
+        {
+          "path": "guides/connection-registry-design.md",
+          "title": "connection-registry-design",
+          "score": 0.3199
+        },
+        {
+          "path": "guides/secrets-management.md",
+          "title": "secrets-management",
+          "score": 0.1636
+        },
+        {
+          "path": "recipes/ingest-wiki-to-qdrant.md",
+          "title": "ingest-wiki-to-qdrant",
+          "score": 0.066
+        },
+        {
+          "path": "guides/ci-cd-for-agents.md",
+          "title": "ci-cd-for-agents",
+          "score": 0.0596
+        },
+        {
+          "path": "faq/troubleshooting-common-errors.md",
+          "title": "troubleshooting-common-errors",
+          "score": 0.0524
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.3199,
+        "mean_score": 0.1323,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How should I manage API keys and secrets?",
+      "expected": [
+        "guides/secrets-management.md"
+      ],
+      "results": [
+        {
+          "path": "guides/secrets-management.md",
+          "title": "secrets-management",
+          "score": 0.1797
+        },
+        {
+          "path": "patterns/pre-commit-safety.md",
+          "title": "Pre-commit Safety Net",
+          "score": 0.1092
+        },
+        {
+          "path": "guides/ci-cd-for-agents.md",
+          "title": "ci-cd-for-agents",
+          "score": 0.1027
+        },
+        {
+          "path": "faq/how-to-add-principle.md",
+          "title": "how-to-add-principle",
+          "score": 0.0956
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.1797,
+        "mean_score": 0.1218,
+        "results_count": 4,
+        "found": true,
+        "precision_at_k": 0.25,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I use the wiki as a knowledge base for agents?",
+      "expected": [
+        "guides/wiki-as-knowledge-base.md"
+      ],
+      "results": [
+        {
+          "path": "guides/wiki-as-knowledge-base.md",
+          "title": "wiki-as-knowledge-base",
+          "score": 0.3499
+        },
+        {
+          "path": "patterns/wiki-driven-agents.md",
+          "title": "wiki-driven-agents",
+          "score": 0.2563
+        },
+        {
+          "path": "faq/why-rag-for-agents.md",
+          "title": "why-rag-for-agents",
+          "score": 0.2506
+        },
+        {
+          "path": "guides/prompt-engineering-for-agents.md",
+          "title": "prompt-engineering-for-agents",
+          "score": 0.1354
+        },
+        {
+          "path": "recipes/create-wiki-page.md",
+          "title": "create-wiki-page",
+          "score": 0.1245
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.3499,
+        "mean_score": 0.2233,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I operate and maintain a vector store?",
+      "expected": [
+        "guides/vector-store-operations.md"
+      ],
+      "results": [
+        {
+          "path": "guides/vector-store-operations.md",
+          "title": "vector-store-operations",
+          "score": 0.1527
+        },
+        {
+          "path": "faq/local-vs-server.md",
+          "title": "local-vs-server",
+          "score": 0.117
+        },
+        {
+          "path": "patterns/wiki-driven-agents.md",
+          "title": "wiki-driven-agents",
+          "score": 0.0749
+        },
+        {
+          "path": "guides/rag-pipeline-basics.md",
+          "title": "RAG Pipeline Basics",
+          "score": 0.0734
+        },
+        {
+          "path": "guides/secrets-management.md",
+          "title": "secrets-management",
+          "score": 0.0501
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.1527,
+        "mean_score": 0.0936,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I test AI agents?",
+      "expected": [
+        "guides/agent-testing-strategies.md"
+      ],
+      "results": [
+        {
+          "path": "guides/wiki-as-knowledge-base.md",
+          "title": "wiki-as-knowledge-base",
+          "score": 0.2077
+        },
+        {
+          "path": "faq/why-rag-for-agents.md",
+          "title": "why-rag-for-agents",
+          "score": 0.2045
+        },
+        {
+          "path": "recipes/create-wiki-page.md",
+          "title": "create-wiki-page",
+          "score": 0.1456
+        },
+        {
+          "path": "guides/documentation-standards.md",
+          "title": "documentation-standards",
+          "score": 0.1401
+        },
+        {
+          "path": "guides/multi-agent-coordination.md",
+          "title": "Multi-Agent Coordination",
+          "score": 0.1371
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.2077,
+        "mean_score": 0.167,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hits": 0
+      }
+    },
+    {
+      "text": "How do I set up an LLM provider fallback chain?",
+      "expected": [
+        "guides/llm-provider-chain.md"
+      ],
+      "results": [
+        {
+          "path": "guides/llm-provider-chain.md",
+          "title": "llm-provider-chain",
+          "score": 0.4693
+        },
+        {
+          "path": "patterns/provider-chain.md",
+          "title": "provider-chain",
+          "score": 0.4008
+        },
+        {
+          "path": "guides/error-handling-patterns.md",
+          "title": "error-handling-patterns",
+          "score": 0.2739
+        },
+        {
+          "path": "recipes/setup-qdrant-local.md",
+          "title": "setup-qdrant-local",
+          "score": 0.1321
+        },
+        {
+          "path": "recipes/ssh-gateway-setup.md",
+          "title": "ssh-gateway-setup",
+          "score": 0.1318
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.4693,
+        "mean_score": 0.2816,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How does the OODA decision loop work?",
+      "expected": [
+        "guides/ooda-loop-implementation.md"
+      ],
+      "results": [
+        {
+          "path": "guides/ooda-loop-implementation.md",
+          "title": "ooda-loop-implementation",
+          "score": 0.167
+        },
+        {
+          "path": "patterns/traceability-gate.md",
+          "title": "Traceability Gate",
+          "score": 0.1487
+        },
+        {
+          "path": "guides/agent-testing-strategies.md",
+          "title": "agent-testing-strategies",
+          "score": 0.134
+        },
+        {
+          "path": "faq/what-is-gedi.md",
+          "title": "what-is-gedi",
+          "score": 0.1174
+        },
+        {
+          "path": "guides/setting-up-gedi.md",
+          "title": "Setting Up GEDI",
+          "score": 0.1102
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.167,
+        "mean_score": 0.1355,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I set up CI/CD for agent repos?",
+      "expected": [
+        "guides/ci-cd-for-agents.md"
+      ],
+      "results": [
+        {
+          "path": "recipes/setup-qdrant-local.md",
+          "title": "setup-qdrant-local",
+          "score": 0.1941
+        },
+        {
+          "path": "recipes/ssh-gateway-setup.md",
+          "title": "ssh-gateway-setup",
+          "score": 0.1938
+        },
+        {
+          "path": "patterns/repo-lock.md",
+          "title": "Repo Lock",
+          "score": 0.1216
+        },
+        {
+          "path": "guides/first-agent-project.md",
+          "title": "Your First Agent Project",
+          "score": 0.1195
+        },
+        {
+          "path": "patterns/branch-flow-guard.md",
+          "title": "Branch Flow Guard",
+          "score": 0.1126
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.1941,
+        "mean_score": 0.1483,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hits": 0
+      }
+    },
+    {
+      "text": "How should agents handle errors and retries?",
+      "expected": [
+        "guides/error-handling-patterns.md"
+      ],
+      "results": [
+        {
+          "path": "patterns/gateway-connector.md",
+          "title": "gateway-connector",
+          "score": 0.0999
+        },
+        {
+          "path": "faq/how-to-add-principle.md",
+          "title": "how-to-add-principle",
+          "score": 0.0887
+        },
+        {
+          "path": "guides/wiki-as-knowledge-base.md",
+          "title": "wiki-as-knowledge-base",
+          "score": 0.077
+        },
+        {
+          "path": "faq/why-rag-for-agents.md",
+          "title": "why-rag-for-agents",
+          "score": 0.0758
+        },
+        {
+          "path": "faq/troubleshooting-common-errors.md",
+          "title": "troubleshooting-common-errors",
+          "score": 0.0756
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.0999,
+        "mean_score": 0.0834,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hits": 0
+      }
+    },
+    {
+      "text": "What fields does an agent manifest need?",
+      "expected": [
+        "guides/agent-manifest-schema.md"
+      ],
+      "results": [
+        {
+          "path": "guides/agent-manifest-schema.md",
+          "title": "agent-manifest-schema",
+          "score": 0.2403
+        },
+        {
+          "path": "guides/ci-cd-for-agents.md",
+          "title": "ci-cd-for-agents",
+          "score": 0.2239
+        },
+        {
+          "path": "guides/setting-up-gedi.md",
+          "title": "Setting Up GEDI",
+          "score": 0.1301
+        },
+        {
+          "path": "guides/first-agent-project.md",
+          "title": "Your First Agent Project",
+          "score": 0.0891
+        },
+        {
+          "path": "patterns/provider-chain.md",
+          "title": "provider-chain",
+          "score": 0.0792
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.2403,
+        "mean_score": 0.1525,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I monitor agent health?",
+      "expected": [
+        "guides/monitoring-agent-health.md"
+      ],
+      "results": [
+        {
+          "path": "guides/monitoring-agent-health.md",
+          "title": "monitoring-agent-health",
+          "score": 0.33
+        },
+        {
+          "path": "guides/ci-cd-for-agents.md",
+          "title": "ci-cd-for-agents",
+          "score": 0.1129
+        },
+        {
+          "path": "patterns/wiki-driven-agents.md",
+          "title": "wiki-driven-agents",
+          "score": 0.0734
+        },
+        {
+          "path": "guides/first-agent-project.md",
+          "title": "Your First Agent Project",
+          "score": 0.072
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.33,
+        "mean_score": 0.1471,
+        "results_count": 4,
+        "found": true,
+        "precision_at_k": 0.25,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I write good prompts for agents?",
+      "expected": [
+        "guides/prompt-engineering-for-agents.md"
+      ],
+      "results": [
+        {
+          "path": "guides/prompt-engineering-for-agents.md",
+          "title": "prompt-engineering-for-agents",
+          "score": 0.1601
+        },
+        {
+          "path": "guides/wiki-as-knowledge-base.md",
+          "title": "wiki-as-knowledge-base",
+          "score": 0.1003
+        },
+        {
+          "path": "faq/why-rag-for-agents.md",
+          "title": "why-rag-for-agents",
+          "score": 0.0987
+        },
+        {
+          "path": "recipes/run-marginalia-evaluation.md",
+          "title": "run-marginalia-evaluation",
+          "score": 0.0973
+        },
+        {
+          "path": "patterns/session-lifecycle.md",
+          "title": "session-lifecycle",
+          "score": 0.0762
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.1601,
+        "mean_score": 0.1065,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "What git workflow should my team use?",
+      "expected": [
+        "guides/git-workflow-for-teams.md"
+      ],
+      "results": [
+        {
+          "path": "guides/git-workflow-for-teams.md",
+          "title": "git-workflow-for-teams",
+          "score": 0.2216
+        },
+        {
+          "path": "faq/how-to-add-principle.md",
+          "title": "how-to-add-principle",
+          "score": 0.1124
+        },
+        {
+          "path": "patterns/pre-commit-safety.md",
+          "title": "Pre-commit Safety Net",
+          "score": 0.0875
+        },
+        {
+          "path": "README.md",
+          "title": "Agentic Playbook",
+          "score": 0.084
+        },
+        {
+          "path": "guides/setting-up-gedi.md",
+          "title": "Setting Up GEDI",
+          "score": 0.0783
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.2216,
+        "mean_score": 0.1168,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "What documentation standards should I follow?",
+      "expected": [
+        "guides/documentation-standards.md"
+      ],
+      "results": [
+        {
+          "path": "guides/documentation-standards.md",
+          "title": "documentation-standards",
+          "score": 0.1684
+        },
+        {
+          "path": "guides/wiki-as-knowledge-base.md",
+          "title": "wiki-as-knowledge-base",
+          "score": 0.1381
+        },
+        {
+          "path": "faq/how-to-add-principle.md",
+          "title": "how-to-add-principle",
+          "score": 0.1096
+        },
+        {
+          "path": "faq/why-rag-for-agents.md",
+          "title": "why-rag-for-agents",
+          "score": 0.0811
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.1684,
+        "mean_score": 0.1243,
+        "results_count": 4,
+        "found": true,
+        "precision_at_k": 0.25,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I maintain an audit trail with a casebook?",
+      "expected": [
+        "guides/casebook-audit-trail.md"
+      ],
+      "results": [
+        {
+          "path": "guides/casebook-audit-trail.md",
+          "title": "casebook-audit-trail",
+          "score": 0.5049
+        },
+        {
+          "path": "faq/how-to-add-principle.md",
+          "title": "how-to-add-principle",
+          "score": 0.0677
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.5049,
+        "mean_score": 0.2863,
+        "results_count": 2,
+        "found": true,
+        "precision_at_k": 0.5,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How does the semaphore protocol prevent conflicts?",
+      "expected": [
+        "guides/semaphore-protocol.md"
+      ],
+      "results": [
+        {
+          "path": "guides/semaphore-protocol.md",
+          "title": "semaphore-protocol",
+          "score": 0.2258
+        },
+        {
+          "path": "guides/multi-agent-coordination.md",
+          "title": "Multi-Agent Coordination",
+          "score": 0.2186
+        },
+        {
+          "path": "patterns/repo-lock.md",
+          "title": "Repo Lock",
+          "score": 0.1521
+        },
+        {
+          "path": "evidence/case-studies.md",
+          "title": "Case Studies",
+          "score": 0.0689
+        },
+        {
+          "path": "README.md",
+          "title": "Agentic Playbook",
+          "score": 0.0596
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.2258,
+        "mean_score": 0.145,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I set up Qdrant locally with Docker?",
+      "expected": [
+        "recipes/setup-qdrant-local.md"
+      ],
+      "results": [
+        {
+          "path": "recipes/setup-qdrant-local.md",
+          "title": "setup-qdrant-local",
+          "score": 0.5642
+        },
+        {
+          "path": "recipes/ssh-gateway-setup.md",
+          "title": "ssh-gateway-setup",
+          "score": 0.1339
+        },
+        {
+          "path": "recipes/ingest-wiki-to-qdrant.md",
+          "title": "ingest-wiki-to-qdrant",
+          "score": 0.1277
+        },
+        {
+          "path": "recipes/create-wiki-page.md",
+          "title": "create-wiki-page",
+          "score": 0.0997
+        },
+        {
+          "path": "guides/error-handling-patterns.md",
+          "title": "error-handling-patterns",
+          "score": 0.092
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.5642,
+        "mean_score": 0.2035,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I ingest markdown files into Qdrant?",
+      "expected": [
+        "recipes/ingest-wiki-to-qdrant.md"
+      ],
+      "results": [
+        {
+          "path": "recipes/ingest-wiki-to-qdrant.md",
+          "title": "ingest-wiki-to-qdrant",
+          "score": 0.3119
+        },
+        {
+          "path": "recipes/setup-qdrant-local.md",
+          "title": "setup-qdrant-local",
+          "score": 0.1563
+        },
+        {
+          "path": "guides/rag-pipeline-basics.md",
+          "title": "RAG Pipeline Basics",
+          "score": 0.1004
+        },
+        {
+          "path": "recipes/create-wiki-page.md",
+          "title": "create-wiki-page",
+          "score": 0.0919
+        },
+        {
+          "path": "recipes/iron-dome-setup.md",
+          "title": "iron-dome-setup",
+          "score": 0.0609
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.3119,
+        "mean_score": 0.1443,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I create a new agent from scratch?",
+      "expected": [
+        "recipes/create-new-agent.md"
+      ],
+      "results": [
+        {
+          "path": "recipes/create-new-agent.md",
+          "title": "create-new-agent",
+          "score": 0.3051
+        },
+        {
+          "path": "guides/secrets-management.md",
+          "title": "secrets-management",
+          "score": 0.1083
+        },
+        {
+          "path": "patterns/wiki-driven-agents.md",
+          "title": "wiki-driven-agents",
+          "score": 0.0747
+        },
+        {
+          "path": "guides/first-agent-project.md",
+          "title": "Your First Agent Project",
+          "score": 0.0733
+        },
+        {
+          "path": "patterns/repo-lock.md",
+          "title": "Repo Lock",
+          "score": 0.0694
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.3051,
+        "mean_score": 0.1262,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I run Marginalia to evaluate RAG quality?",
+      "expected": [
+        "recipes/run-marginalia-evaluation.md"
+      ],
+      "results": [
+        {
+          "path": "faq/why-rag-for-agents.md",
+          "title": "why-rag-for-agents",
+          "score": 0.2443
+        },
+        {
+          "path": "recipes/run-marginalia-evaluation.md",
+          "title": "run-marginalia-evaluation",
+          "score": 0.222
+        },
+        {
+          "path": "guides/choosing-embedding-model.md",
+          "title": "Choosing an Embedding Model for RAG",
+          "score": 0.1837
+        },
+        {
+          "path": "patterns/wiki-driven-agents.md",
+          "title": "wiki-driven-agents",
+          "score": 0.1553
+        },
+        {
+          "path": "guides/rag-pipeline-basics.md",
+          "title": "RAG Pipeline Basics",
+          "score": 0.1517
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.2443,
+        "mean_score": 0.1914,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I set up an SSH gateway for remote services?",
+      "expected": [
+        "recipes/ssh-gateway-setup.md"
+      ],
+      "results": [
+        {
+          "path": "recipes/ssh-gateway-setup.md",
+          "title": "ssh-gateway-setup",
+          "score": 0.5153
+        },
+        {
+          "path": "patterns/gateway-connector.md",
+          "title": "gateway-connector",
+          "score": 0.2404
+        },
+        {
+          "path": "guides/connection-registry-design.md",
+          "title": "connection-registry-design",
+          "score": 0.1901
+        },
+        {
+          "path": "faq/local-vs-server.md",
+          "title": "local-vs-server",
+          "score": 0.1306
+        },
+        {
+          "path": "faq/troubleshooting-common-errors.md",
+          "title": "troubleshooting-common-errors",
+          "score": 0.1244
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.5153,
+        "mean_score": 0.2402,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I set up Iron Dome pre-commit scanning?",
+      "expected": [
+        "recipes/iron-dome-setup.md"
+      ],
+      "results": [
+        {
+          "path": "recipes/iron-dome-setup.md",
+          "title": "iron-dome-setup",
+          "score": 0.4002
+        },
+        {
+          "path": "patterns/pre-commit-safety.md",
+          "title": "Pre-commit Safety Net",
+          "score": 0.1926
+        },
+        {
+          "path": "guides/ci-cd-for-agents.md",
+          "title": "ci-cd-for-agents",
+          "score": 0.1604
+        },
+        {
+          "path": "recipes/setup-qdrant-local.md",
+          "title": "setup-qdrant-local",
+          "score": 0.1241
+        },
+        {
+          "path": "recipes/ssh-gateway-setup.md",
+          "title": "ssh-gateway-setup",
+          "score": 0.1239
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.4002,
+        "mean_score": 0.2002,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "What is GEDI and how does it work?",
+      "expected": [
+        "faq/what-is-gedi.md"
+      ],
+      "results": [
+        {
+          "path": "guides/setting-up-gedi.md",
+          "title": "Setting Up GEDI",
+          "score": 0.3519
+        },
+        {
+          "path": "patterns/traceability-gate.md",
+          "title": "Traceability Gate",
+          "score": 0.2032
+        },
+        {
+          "path": "faq/how-to-add-principle.md",
+          "title": "how-to-add-principle",
+          "score": 0.169
+        },
+        {
+          "path": "faq/what-is-gedi.md",
+          "title": "what-is-gedi",
+          "score": 0.1207
+        },
+        {
+          "path": "guides/semaphore-protocol.md",
+          "title": "semaphore-protocol",
+          "score": 0.1117
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.3519,
+        "mean_score": 0.1913,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "Why should agents use RAG instead of fine-tuning?",
+      "expected": [
+        "faq/why-rag-for-agents.md"
+      ],
+      "results": [
+        {
+          "path": "faq/why-rag-for-agents.md",
+          "title": "why-rag-for-agents",
+          "score": 0.3596
+        },
+        {
+          "path": "guides/rag-pipeline-basics.md",
+          "title": "RAG Pipeline Basics",
+          "score": 0.1399
+        },
+        {
+          "path": "recipes/create-wiki-page.md",
+          "title": "create-wiki-page",
+          "score": 0.1138
+        },
+        {
+          "path": "guides/wiki-as-knowledge-base.md",
+          "title": "wiki-as-knowledge-base",
+          "score": 0.11
+        },
+        {
+          "path": "guides/documentation-standards.md",
+          "title": "documentation-standards",
+          "score": 0.1048
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.3596,
+        "mean_score": 0.1656,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I add a new principle to GEDI?",
+      "expected": [
+        "faq/how-to-add-principle.md"
+      ],
+      "results": [
+        {
+          "path": "faq/how-to-add-principle.md",
+          "title": "how-to-add-principle",
+          "score": 0.3422
+        },
+        {
+          "path": "guides/setting-up-gedi.md",
+          "title": "Setting Up GEDI",
+          "score": 0.3062
+        },
+        {
+          "path": "guides/secrets-management.md",
+          "title": "secrets-management",
+          "score": 0.1958
+        },
+        {
+          "path": "faq/what-is-gedi.md",
+          "title": "what-is-gedi",
+          "score": 0.1052
+        },
+        {
+          "path": "recipes/create-new-agent.md",
+          "title": "create-new-agent",
+          "score": 0.1029
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.3422,
+        "mean_score": 0.2105,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "What runs locally vs on the server?",
+      "expected": [
+        "faq/local-vs-server.md"
+      ],
+      "results": [
+        {
+          "path": "recipes/setup-qdrant-local.md",
+          "title": "setup-qdrant-local",
+          "score": 0.3278
+        },
+        {
+          "path": "faq/local-vs-server.md",
+          "title": "local-vs-server",
+          "score": 0.1659
+        },
+        {
+          "path": "guides/secrets-management.md",
+          "title": "secrets-management",
+          "score": 0.1421
+        },
+        {
+          "path": "guides/error-handling-patterns.md",
+          "title": "error-handling-patterns",
+          "score": 0.1158
+        },
+        {
+          "path": "guides/choosing-embedding-model.md",
+          "title": "Choosing an Embedding Model for RAG",
+          "score": 0.0694
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.3278,
+        "mean_score": 0.1642,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I troubleshoot common agent errors?",
+      "expected": [
+        "faq/troubleshooting-common-errors.md"
+      ],
+      "results": [
+        {
+          "path": "faq/troubleshooting-common-errors.md",
+          "title": "troubleshooting-common-errors",
+          "score": 0.1427
+        },
+        {
+          "path": "patterns/gateway-connector.md",
+          "title": "gateway-connector",
+          "score": 0.1126
+        },
+        {
+          "path": "patterns/wiki-driven-agents.md",
+          "title": "wiki-driven-agents",
+          "score": 0.0659
+        },
+        {
+          "path": "guides/first-agent-project.md",
+          "title": "Your First Agent Project",
+          "score": 0.0647
+        },
+        {
+          "path": "recipes/debug-rag-results.md",
+          "title": "debug-rag-results",
+          "score": 0.0564
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.1427,
+        "mean_score": 0.0885,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How does the gateway connector pattern work?",
+      "expected": [
+        "patterns/gateway-connector.md"
+      ],
+      "results": [
+        {
+          "path": "patterns/gateway-connector.md",
+          "title": "gateway-connector",
+          "score": 0.4064
+        },
+        {
+          "path": "faq/local-vs-server.md",
+          "title": "local-vs-server",
+          "score": 0.3337
+        },
+        {
+          "path": "recipes/ssh-gateway-setup.md",
+          "title": "ssh-gateway-setup",
+          "score": 0.2241
+        },
+        {
+          "path": "guides/connection-registry-design.md",
+          "title": "connection-registry-design",
+          "score": 0.2239
+        },
+        {
+          "path": "patterns/traceability-gate.md",
+          "title": "Traceability Gate",
+          "score": 0.1574
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.4064,
+        "mean_score": 0.2691,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "What is the antifragile fix pattern?",
+      "expected": [
+        "patterns/antifragile-fix.md"
+      ],
+      "results": [
+        {
+          "path": "patterns/antifragile-fix.md",
+          "title": "antifragile-fix",
+          "score": 0.4169
+        },
+        {
+          "path": "patterns/structural-fix.md",
+          "title": "Structural Fix",
+          "score": 0.3709
+        },
+        {
+          "path": "evidence/case-studies.md",
+          "title": "Case Studies",
+          "score": 0.1036
+        },
+        {
+          "path": "templates/cursorrules.template.md",
+          "title": "cursorrules.template",
+          "score": 0.0823
+        },
+        {
+          "path": "reddit/draft-posts.md",
+          "title": "Reddit Draft Posts",
+          "score": 0.0735
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.4169,
+        "mean_score": 0.2094,
+        "results_count": 5,
+        "found": true,
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    }
+  ]
+}
