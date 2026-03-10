@@ -1,0 +1,16 @@
+# Repo lock (local state, not committed)
+.semaphore.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (if someone adds tooling later)
+node_modules/

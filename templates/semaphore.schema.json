@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Repo Semaphore",
+  "description": "Coordination file for multi-agent/multi-session repo access. Place as .semaphore.json in repo root (gitignored).",
+  "type": "object",
+  "required": ["status"],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "description": "green = free, yellow = someone working, red = deploy in progress (DO NOT TOUCH)"
+    },
+    "session": {
+      "type": "string",
+      "description": "Session identifier (e.g., S120, sprint-3, john-feature-x)"
+    },
+    "branch": {
+      "type": "string",
+      "description": "Branch being worked on"
+    },
+    "agent": {
+      "type": "string",
+      "description": "Agent or developer name (e.g., claude-code, cursor, john)"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of when the lock was set"
+    },
+    "ttl_minutes": {
+      "type": "integer",
+      "default": 120,
+      "description": "Time-to-live in minutes. If the lock is older than this, treat as stale."
+    },
+    "note": {
+      "type": "string",
+      "description": "Optional: what you're working on"
+    }
+  },
+  "examples": [
+    {
+      "status": "green"
+    },
+    {
+      "status": "yellow",
+      "session": "S120",
+      "branch": "feat/new-dashboard",
+      "agent": "claude-code",
+      "timestamp": "2026-03-10T08:30:00Z",
+      "ttl_minutes": 120,
+      "note": "Working on dashboard components"
+    },
+    {
+      "status": "red",
+      "session": "deploy-v2.1",
+      "agent": "ci-pipeline",
+      "timestamp": "2026-03-10T14:00:00Z",
+      "ttl_minutes": 30,
+      "note": "Production deploy in progress"
+    }
+  ]
+}
