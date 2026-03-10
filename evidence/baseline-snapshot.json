@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "createdAt": "2026-03-10T10:01:10.882878+00:00",
+  "vaultPaths": [
+    "C:/Users/EBELVIGLS/AppData/Local/Temp/test-playbook/agentic-playbook"
+  ],
+  "docs": 11,
+  "topK": 5,
+  "minScore": 0.1,
+  "queriesFile": "C:/Users/EBELVIGLS/AppData/Local/Temp/test-playbook/agentic-playbook/queries.yaml",
+  "summary": {
+    "queries": 8,
+    "avg_top1_score": 0.1217,
+    "avg_mean_score": 0.1074,
+    "coverage": 0.75,
+    "queries_with_results": 6,
+    "precision_at_k": 0.5104,
+    "recall_at_k": 0.75,
+    "evaluated_queries": 8
+  },
+  "queries": [
+    {
+      "text": "How do I prevent secrets from leaking into git?",
+      "expected": [
+        "patterns/pre-commit-safety.md"
+      ],
+      "results": [
+        {
+          "path": "patterns/pre-commit-safety.md",
+          "title": "Pre-commit Safety Net",
+          "score": 0.1049
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.1049,
+        "mean_score": 0.1049,
+        "results_count": 1,
+        "found": true,
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "What happens when two AI agents edit the same file?",
+      "expected": [
+        "patterns/repo-lock.md"
+      ],
+      "results": [
+        {
+          "path": "patterns/repo-lock.md",
+          "title": "Repo Lock",
+          "score": 0.1941
+        },
+        {
+          "path": "README.md",
+          "title": "Agentic Playbook",
+          "score": 0.1802
+        },
+        {
+          "path": "reddit/draft-posts.md",
+          "title": "Reddit Draft Posts",
+          "score": 0.1492
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.1941,
+        "mean_score": 0.1745,
+        "results_count": 3,
+        "found": true,
+        "precision_at_k": 0.3333,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I make sure PRs are linked to work items?",
+      "expected": [
+        "patterns/traceability-gate.md"
+      ],
+      "results": [
+        {
+          "path": "patterns/traceability-gate.md",
+          "title": "Traceability Gate",
+          "score": 0.1165
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.1165,
+        "mean_score": 0.1165,
+        "results_count": 1,
+        "found": true,
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "What branch should my PR target?",
+      "expected": [
+        "patterns/branch-flow-guard.md"
+      ],
+      "results": [
+        {
+          "path": "patterns/branch-flow-guard.md",
+          "title": "Branch Flow Guard",
+          "score": 0.218
+        },
+        {
+          "path": "evidence/case-studies.md",
+          "title": "Case Studies",
+          "score": 0.1292
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.218,
+        "mean_score": 0.1736,
+        "results_count": 2,
+        "found": true,
+        "precision_at_k": 0.5,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How do I fix bugs without creating new ones?",
+      "expected": [
+        "patterns/structural-fix.md"
+      ],
+      "results": [
+        {
+          "path": "patterns/structural-fix.md",
+          "title": "Structural Fix",
+          "score": 0.1213
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.1213,
+        "mean_score": 0.1213,
+        "results_count": 1,
+        "found": true,
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "What are the GEDI principles?",
+      "expected": [
+        "principles/index.md"
+      ],
+      "results": [
+        {
+          "path": "reddit/draft-posts.md",
+          "title": "Reddit Draft Posts",
+          "score": 0.2185
+        },
+        {
+          "path": "principles/index.md",
+          "title": "Principles",
+          "score": 0.1825
+        },
+        {
+          "path": "README.md",
+          "title": "Agentic Playbook",
+          "score": 0.1471
+        },
+        {
+          "path": "THE-JOURNEY.md",
+          "title": "The Journey",
+          "score": 0.1245
+        }
+      ],
+      "metrics": {
+        "top1_score": 0.2185,
+        "mean_score": 0.1681,
+        "results_count": 4,
+        "found": true,
+        "precision_at_k": 0.25,
+        "recall_at_k": 1.0,
+        "hits": 1
+      }
+    },
+    {
+      "text": "How did the project start?",
+      "expected": [
+        "THE-JOURNEY.md"
+      ],
+      "results": [],
+      "metrics": {
+        "top1_score": 0.0,
+        "mean_score": 0.0,
+        "results_count": 0,
+        "found": false,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hits": 0
+      }
+    },
+    {
+      "text": "What real problems did the team encounter?",
+      "expected": [
+        "evidence/case-studies.md"
+      ],
+      "results": [],
+      "metrics": {
+        "top1_score": 0.0,
+        "mean_score": 0.0,
+        "results_count": 0,
+        "found": false,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hits": 0
+      }
+    }
+  ]
+}

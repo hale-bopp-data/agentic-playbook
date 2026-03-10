@@ -1,0 +1,34 @@
+## Marginalia eval queries — Agentic Playbook baseline
+## Each query simulates a real user question about the playbook
+
+- text: "How do I prevent secrets from leaking into git?"
+  expected:
+    - "patterns/pre-commit-safety.md"
+
+- text: "What happens when two AI agents edit the same file?"
+  expected:
+    - "patterns/repo-lock.md"
+
+- text: "How do I make sure PRs are linked to work items?"
+  expected:
+    - "patterns/traceability-gate.md"
+
+- text: "What branch should my PR target?"
+  expected:
+    - "patterns/branch-flow-guard.md"
+
+- text: "How do I fix bugs without creating new ones?"
+  expected:
+    - "patterns/structural-fix.md"
+
+- text: "What are the GEDI principles?"
+  expected:
+    - "principles/index.md"
+
+- text: "How did the project start?"
+  expected:
+    - "THE-JOURNEY.md"
+
+- text: "What real problems did the team encounter?"
+  expected:
+    - "evidence/case-studies.md"
