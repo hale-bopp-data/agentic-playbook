@@ -116,6 +116,7 @@ Each principle comes with **diagnostic questions** — the real value. Example:
 |------|---------|
 | [cursorrules.template.md](templates/cursorrules.template.md) | Starter `.cursorrules` — copy, edit, done |
 | [semaphore.schema.json](templates/semaphore.schema.json) | Repo lock file schema |
+| [gedi-manifest.template.json](templates/gedi-manifest.template.json) | Ethics advisor manifest — fork with your own principles |
 
 ### [Evidence](evidence/case-studies.md) — Real case studies from our 70+ documented interventions
 
@@ -285,7 +286,8 @@ agentic-playbook/
 │   └── index.md                      # 19 reasoning tools (GEDI)
 ├── templates/
 │   ├── cursorrules.template.md       # Starter .cursorrules
-│   └── semaphore.schema.json         # Repo lock schema
+│   ├── semaphore.schema.json         # Repo lock schema
+│   └── gedi-manifest.template.json   # Ethics advisor (fork with your principles)
 ├── evidence/
 │   └── case-studies.md               # Real cases (anonymized)
 └── reddit/
