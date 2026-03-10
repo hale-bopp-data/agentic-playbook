@@ -1,3 +1,10 @@
+---
+title: "Reddit Draft Posts"
+status: active
+created: 2026-03-10
+tags: [agentic-playbook, reddit, community, gedi-voice]
+---
+
 # Reddit Draft Posts — r/ThinkingDeeplyAI
 
 > Voice: GEDI (the wise advisor, not a salesperson)
