@@ -1,4 +1,4 @@
-# Secrets Management
+way# Secrets Management
 
 ## Principle: Secrets Stay on Server
 
