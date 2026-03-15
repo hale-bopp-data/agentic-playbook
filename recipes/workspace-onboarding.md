@@ -198,6 +198,64 @@ ci_cd:
 | `~/.easyway/workspace-map.yml` | If workspace root is cluttered |
 | Pointed from AGENTS.md / .cursorrules | Always — so agents find it instantly |
 
+## Multi-Agent Output: Write Where Each Agent Reads
+
+**Critical lesson from EasyWay S149**: generating `workspace-map.yml` is not enough.
+Each AI agent reads instructions from a **different location**. If you only write
+AGENTS.md, Codex won't see it. If you only write .cursorrules, Claude won't see it.
+
+The onboarding must write to **all agent entry points**:
+
+| Agent | Entry Point | What to write |
+|-------|------------|---------------|
+| Claude Code | `CLAUDE.md` (workspace root) | Full instructions |
+| Cursor | `.cursorrules` (repo root) | Full instructions |
+| Codex (OpenAI) | `~/.codex/instructions.md` | Compact instructions (global) |
+| Copilot | `.github/copilot-instructions.md` | Compact instructions |
+| Gemini | Project-level settings | Via IDE config |
+
+### What goes in each file
+
+All files should contain the same **core information**, adapted to format:
+
+1. **Workspace map** — which repos, where, what stack
+2. **ADO/Git workflow** — how to create PRs (tool, not CLI)
+3. **Branch strategy** — per-repo target branches
+4. **Absolute rules** — what to NEVER do (secrets, direct push, etc.)
+5. **Branch prefix** — each agent uses its own prefix (claude/, codex/, cursor/)
+
+### Template for agent-specific instructions
+
+```markdown
+# {Project} — {Agent} Instructions
+
+## Workspace Map
+{table of repos with path, stack, PR target}
+
+## Rules
+- NEVER {forbidden actions}
+- ALWAYS {required workflow}
+
+## PR Workflow
+{exact commands, not generic guidance}
+
+## Branch Prefix
+Use `{agent-name}/` prefix for all branches.
+```
+
+### Codex-specific: config.toml for MCP
+
+If you use MCP servers, also update `~/.codex/config.toml`:
+
+```toml
+[mcp_servers.your-ado-tool]
+args = ["mcp/index.ts", "--transport", "stdio"]
+command = "npx"
+cwd = "/path/to/ado-toolkit"
+```
+
+This ensures Codex can create PRs via MCP instead of falling back to `az repos pr create`.
+
 ## Integration with Testuggine
 
 Once `workspace-map.yml` exists, the [Governance Testuggine](governance-testuggine.md)
@@ -206,6 +264,15 @@ can add a Layer 1 rule:
 ```
 Rule: workspace-map.yml exists and is < 30 days old
 Score: +1 if present, 0 if missing, WARN if stale
+```
+
+### Layer 1 rule: multi-agent coverage
+
+```
+Rule: instructions exist for all active agents
+Check: for each agent in agent-census.json,
+       verify that the corresponding entry point file exists
+Score: +1 per agent covered, WARN if any agent missing
 ```
 
 This closes the loop: onboarding generates the map, Testuggine keeps it fresh.
@@ -219,10 +286,14 @@ This recipe distills lessons from 149 sessions of multi-agent development:
 - **Session S147**: Context Diet reduced MEMORY from 1342 to 728 lines — but the
   workspace map was still not in the agent entry point
 - **Session S149**: Codex spent 75s + 8 tool calls finding the portal repo.
-  This recipe is the fix.
+  Then it tried `az repos pr create` instead of `ado-remote.sh`, committed on the
+  wrong branch, and couldn't create a PR because MCP ADO wasn't configured.
+  Root cause: AGENTS.md existed, but Codex doesn't read AGENTS.md — it reads
+  `~/.codex/instructions.md`. The fix: write instructions in **every agent's format**.
 
 The key insight: **the cost of NOT having a map compounds with every session**.
 A 15-minute investment in onboarding saves hours across all future agent sessions.
+The second insight: **writing instructions in only one format is writing them for only one agent**.
 
 ## Common Mistakes
 
@@ -232,6 +303,9 @@ A 15-minute investment in onboarding saves hours across all future agent session
 | Map is in a wiki but not in the repo | Put it where agents look: workspace root or pointed from AGENTS.md |
 | Map was generated once and never updated | Add Testuggine Layer 1 rule for staleness |
 | Each agent has its own map format | Use this standard schema — one map, all agents |
+| Instructions only in AGENTS.md | Codex, Copilot don't read it — write to each agent's entry point |
+| MCP servers not configured for all agents | Check config.toml (Codex), settings.json (Cursor), etc. |
+| No branch prefix convention | Agents create conflicting branches — assign prefixes (claude/, codex/, cursor/) |
 
 ## See Also
 
