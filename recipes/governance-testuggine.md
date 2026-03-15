@@ -39,6 +39,7 @@ Layer 3: Human Review (manual)           ← Catches what automation misses
 
 ## Prerequisites
 
+- [Workspace Onboarding](workspace-onboarding.md) completed (workspace-map.yml exists — agents orient in 0s, not 75s)
 - [Agent Census](agent-census.md) completed (you need to know where your agents live)
 - [Context Diet](context-diet-matrioska.md) applied at least once (establishes baseline)
 - CI/CD pipeline or cron jobs available
