@@ -56,6 +56,8 @@ Layer 3: Human Review (manual)           ← Catches what automation misses
 | Pointer density | Context files use pointers, not duplicated content | `grep -c "see wiki\|see guide" .cursorrules` |
 | Max files per directory | Wiki guides don't grow unbounded | `find guides/ -type f \| wc -l` |
 | Max lines per file | Workflow files stay readable | `wc -l workflow.json` |
+| Agent instructions coverage | Every enabled agent has its instructions file | `agent-home-sync.sh --check` |
+| Agent instructions freshness | Instructions are < 30 days old | `stat` on each file |
 
 ### Minimal implementation
 
@@ -112,6 +114,8 @@ Define a simple 0.00–1.00 score:
 | Repos | Days since last update | > 30 days |
 | Wiki guides | File count per directory | > 50 files |
 | Agent memory | Total bytes | > 100 KB (growing) |
+| Agent instructions | Stale (> 30 days) or missing | Any agent without instructions |
+| Agent sync config | Agents enabled but not synced | `agent-home-sync.sh --check` |
 
 ### Implementation options
 
@@ -175,4 +179,6 @@ Track these metrics over time:
 ## See Also
 
 - [Agent Census](agent-census.md) — prerequisite: discover your agent footprint
+- [Context Sync with n8n](context-sync-n8n.md) — keep repo context files fresh automatically
+- [Workspace Onboarding](workspace-onboarding.md) — bootstrap the workspace map + multi-agent instructions
 - [Context Diet (Matrioska)](context-diet-matrioska.md) — the diet that Testuggine protects
