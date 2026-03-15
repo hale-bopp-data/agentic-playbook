@@ -66,6 +66,42 @@ Common agent context files:
 
 **Important distinction**: not all agent files are LLM context. Auto-approve rules (like Codex `default.rules`) are used locally by the CLI and never sent to the model. Only count files that actually enter the token window.
 
+### Rules Entry Points (S149 — critical for multi-agent sync)
+
+Each agent reads instructions from a **different location**. If you write rules in only
+one format, the other agents will ignore them. Map where each agent reads:
+
+| Agent | Instructions file | Config file | MCP support |
+|-------|------------------|-------------|-------------|
+| Claude Code | `CLAUDE.md` (repo root) | `~/.claude/settings.json` | Yes (settings) |
+| Cursor | `.cursorrules` (repo root) | `~/.cursor/rules/` | Yes (settings) |
+| Codex (OpenAI) | `~/.codex/instructions.md` | `~/.codex/config.toml` | Yes (config.toml) |
+| Copilot | `.github/copilot-instructions.md` | VS Code settings | No |
+| Gemini | IDE project settings | `~/.antigravity/rules.md` | Varies |
+
+**Discovery script** — find which agents are installed AND where they read rules:
+
+```bash
+# Scan agent entry points (run on any machine)
+echo "=== Agent Rules Discovery ==="
+for entry in \
+    "claude:~/.claude:CLAUDE.md" \
+    "codex:~/.codex:~/.codex/instructions.md" \
+    "cursor:~/.cursor:.cursorrules" \
+    "copilot:~/.copilot:.github/copilot-instructions.md" \
+    "gemini:~/.antigravity:~/.antigravity/rules.md"; do
+  IFS=':' read -r agent dir rules <<< "$entry"
+  if [ -d "$(eval echo $dir)" ]; then
+    rules_path=$(eval echo "$rules")
+    exists="NO"
+    [ -f "$rules_path" ] && exists="YES ($(wc -l < "$rules_path") lines)"
+    echo "  $agent: INSTALLED | rules: $exists ($rules_path)"
+  fi
+done
+```
+
+Add `rules_path` to the census JSON for each agent (see schema below).
+
 ### Step 3 — Record (10 min)
 
 Write the census to a JSON file:
@@ -90,6 +126,14 @@ Write the census to a JSON file:
         "bytes": 50279,
         "estimated_tokens": 12570,
         "type": "llm-context"
+      },
+      "rules": {
+        "instructions_path": "CLAUDE.md",
+        "config_path": "~/.claude/settings.json",
+        "instructions_exists": true,
+        "instructions_lines": 45,
+        "mcp_configured": true,
+        "branch_prefix": "claude/"
       }
     }
   ]
@@ -109,6 +153,9 @@ Common actions after a census:
 | Directory Z is not an AI agent | Reclassify (IDE, cache, etc.) |
 | Agent has empty memory dir | No action needed — minimal footprint |
 | Sensitive data in rules (SSH keys, PATs) | Clean immediately |
+| Agent installed but no instructions file | Run [Workspace Onboarding](workspace-onboarding.md) for that agent |
+| Agent has instructions but no MCP configured | Add MCP server in agent config |
+| No branch prefix convention | Assign prefixes to avoid branch collisions (claude/, codex/, cursor/) |
 
 ## Server Level
 
