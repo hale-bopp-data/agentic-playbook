@@ -9,18 +9,21 @@ tags: []
 > Guardrails e regole: vedi `.cursorrules` nello stesso repo.
 
 ## Identità
-- **Cosa**: Guide operative, pattern agentic, ricette, FAQ, evidence, principi
-- **Linguaggio**: Markdown
-- **Branch**: feat→main` o `docs/→main | PR target: `main`
-- **Circle**: 1 (GitHub-primary, NO ADO)
-- **Visibilita**: pubblico
+| Campo | Valore |
+|---|---|
+| Cosa | Guide operative, pattern agentic, ricette, FAQ, evidence, principi |
+| Linguaggio | Markdown |
+| Branch | `feat→main` o `docs/→main` — PR target: `main` |
+| Circle | 1 (GitHub-primary, NO ADO) |
+| Visibilita | pubblico |
 
 ## Comandi rapidi
 ```bash
 ewctl commit
+# Push
 git push origin <branch>
 
-
+# PR (GitHub — NON ADO)
 gh pr create --title "titolo" --body "descrizione"
 ```
 
@@ -37,10 +40,13 @@ templates/           # Template riusabili
 THE-JOURNEY.md       # Il viaggio narrativo
 ```
 
-- Contenuto divulgativo — linguaggio accessibile, no gergo interno EasyWay
-- Ogni guida deve essere self-contained
-- MAI includere secrets, PAT, URL interni, o riferimenti a infrastruttura EasyWay
-- Markdown puro — no frontmatter YAML (diverso dalla wiki interna)
+## Regole specifiche agentic-playbook
+| Regola | Dettaglio |
+|---|---|
+| Linguaggio | divulgativo, accessibile, no gergo interno EasyWay |
+| Self-contained | ogni guida deve essere autonoma |
+| Sicurezza | MAI secrets, PAT, URL interni, o riferimenti infra EasyWay |
+| Formato | Markdown puro — no frontmatter YAML (diverso dalla wiki interna) |
 
 ## ADO Workflow
 ```bash
@@ -58,7 +64,6 @@ cd /c/old/easyway/agentic-playbook && git push -u origin feat/nome-descrittivo
 bash /c/old/easyway/ado/scripts/ado-remote.sh pr-create agentic-playbook feat/nome-descrittivo main "AB#NNN titolo" NNN
 ```
 
-
 ## Connessioni
 - **PAT/secrets**: SOLO su server `/opt/easyway/.env.secrets` — MAI in locale
 - **Guida**: `easyway-wiki/guides/connection-registry.md`
@@ -66,4 +71,4 @@ bash /c/old/easyway/ado/scripts/ado-remote.sh pr-create agentic-playbook feat/no
 
 ---
 > Context Sync Engine | Master: `easyway-wiki/templates/agents-master.md`
-> Override: `easyway-wiki/templates/repo-overrides.yml` | Sync: 2026-03-14T12:31:02.323Z
+> Override: `easyway-wiki/templates/repo-overrides.yml` | Sync: 2026-03-14T16:00:00.000Z
