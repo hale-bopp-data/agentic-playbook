@@ -52,18 +52,40 @@ One JSONL file. Every agent appends one line at the end of each session.
 ### The Format
 
 ```jsonl
-{"session":"S148","agent":"claude","date":"2026-03-15","start":"03:14","duration_min":150,"items_completed":8,"commits":9,"prs":8,"context_held":true,"compacting_count":0,"score_before":0.94,"score_after":0.87,"notes":"Testuggine launch, agent census, wiki reorg"}
+{"sid":"ew-20260315-claude-0314","session":"S148","agent":"claude","date":"2026-03-15","start":"03:14","duration_min":150,"items_completed":8,"commits":9,"prs":8,"context_held":true,"compacting_count":0,"score_before":0.94,"score_after":0.87,"notes":"Testuggine launch, agent census, wiki reorg"}
 ```
+
+### Session ID (SID) — We Generate It
+
+Every session gets an **atomic SID** using this formula:
+
+```
+ew-{YYYYMMDD}-{agent}-{HHmm}
+```
+
+Examples:
+- `ew-20260315-claude-0314` (Claude, March 15, 03:14)
+- `ew-20260316-gemini-0930` (Gemini, March 16, 09:30)
+- `ew-20260316-codex-1400` (Codex, March 16, 14:00)
+
+Why we generate it ourselves:
+- **Not all agents expose a session ID** (Codex doesn't, Axet might not)
+- **Deterministic**: given agent + date + time, anyone can reconstruct it
+- **Cross-agent**: same format regardless of vendor
+- **Namespace**: `ew-` prefix avoids collisions with vendor IDs
+- If you also have the agent's native UUID, store it in `native_session_id`
 
 ### Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
+| sid | string | yes | Atomic session ID: `ew-{YYYYMMDD}-{agent}-{HHmm}` |
 | session | string | yes | Session identifier (e.g., "S149", "sprint-3-day-2") |
 | agent | string | yes | Agent name: "claude", "cursor", "copilot", "codex", "gemini", etc. |
 | date | string | yes | ISO date (YYYY-MM-DD) |
 | start | string | yes | Start time (HH:MM) |
 | duration_min | number | yes | Duration in minutes |
+| native_session_id | string | no | Agent's own session UUID (if available) |
 | items_completed | number | no | Backlog items completed |
 | commits | number | no | Commits made |
 | prs | number | no | Pull requests created |
@@ -83,7 +105,7 @@ Copy the appropriate block into your agent's configuration file.
 ## Session Telemetry (MANDATORY)
 At the end of every session, append a line to ~/.easyway/session-telemetry.jsonl:
 
-{"session":"SXXX","agent":"claude","date":"YYYY-MM-DD","start":"HH:MM","duration_min":N,"items_completed":N,"commits":N,"prs":N,"context_held":true/false,"compacting_count":N,"notes":"brief description"}
+{"sid":"ew-YYYYMMDD-claude-HHmm","session":"SXXX","agent":"claude","date":"YYYY-MM-DD","start":"HH:MM","duration_min":N,"items_completed":N,"commits":N,"prs":N,"context_held":true/false,"compacting_count":N,"notes":"brief description"}
 
 Full instructions: ~/.easyway/session-telemetry-instructions.md
 ```
@@ -94,7 +116,7 @@ Full instructions: ~/.easyway/session-telemetry-instructions.md
 ## Session Telemetry (MANDATORY)
 At the end of every session, append a line to ~/.easyway/session-telemetry.jsonl:
 
-{"session":"SXXX","agent":"cursor","date":"YYYY-MM-DD","start":"HH:MM","duration_min":N,"items_completed":N,"commits":N,"prs":N,"context_held":true/false,"compacting_count":N,"notes":"brief description"}
+{"sid":"ew-YYYYMMDD-cursor-HHmm","session":"SXXX","agent":"cursor","date":"YYYY-MM-DD","start":"HH:MM","duration_min":N,"items_completed":N,"commits":N,"prs":N,"context_held":true/false,"compacting_count":N,"notes":"brief description"}
 
 Full instructions: ~/.easyway/session-telemetry-instructions.md
 ```
@@ -105,7 +127,7 @@ Full instructions: ~/.easyway/session-telemetry-instructions.md
 ## Session Telemetry (MANDATORY)
 At the end of every session, append a line to ~/.easyway/session-telemetry.jsonl:
 
-{"session":"SXXX","agent":"gemini","date":"YYYY-MM-DD","start":"HH:MM","duration_min":N,"items_completed":N,"commits":N,"prs":N,"context_held":true/false,"compacting_count":N,"notes":"brief description"}
+{"sid":"ew-YYYYMMDD-gemini-HHmm","session":"SXXX","agent":"gemini","date":"YYYY-MM-DD","start":"HH:MM","duration_min":N,"items_completed":N,"commits":N,"prs":N,"context_held":true/false,"compacting_count":N,"notes":"brief description"}
 
 Full instructions: ~/.easyway/session-telemetry-instructions.md
 ```
@@ -116,7 +138,7 @@ Full instructions: ~/.easyway/session-telemetry-instructions.md
 ## Session Telemetry (MANDATORY)
 At the end of every session, append a line to ~/.easyway/session-telemetry.jsonl:
 
-{"session":"SXXX","agent":"codex","date":"YYYY-MM-DD","start":"HH:MM","duration_min":N,"items_completed":N,"commits":N,"prs":N,"context_held":true/false,"compacting_count":N,"notes":"brief description"}
+{"sid":"ew-YYYYMMDD-codex-HHmm","session":"SXXX","agent":"codex","date":"YYYY-MM-DD","start":"HH:MM","duration_min":N,"items_completed":N,"commits":N,"prs":N,"context_held":true/false,"compacting_count":N,"notes":"brief description"}
 
 Full instructions: ~/.easyway/session-telemetry-instructions.md
 ```
@@ -131,7 +153,7 @@ Copilot doesn't have persistent instructions. Track manually or via a wrapper sc
 ## Session Telemetry (RECOMMENDED)
 At the end of every session, append a line to ~/.easyway/session-telemetry.jsonl:
 
-{"session":"SXXX","agent":"axet","date":"YYYY-MM-DD","start":"HH:MM","duration_min":N,"items_completed":N,"commits":N,"prs":N,"context_held":true/false,"compacting_count":N,"notes":"brief description"}
+{"sid":"ew-YYYYMMDD-axet-HHmm","session":"SXXX","agent":"axet","date":"YYYY-MM-DD","start":"HH:MM","duration_min":N,"items_completed":N,"commits":N,"prs":N,"context_held":true/false,"compacting_count":N,"notes":"brief description"}
 ```
 
 Note: "RECOMMENDED" not "MANDATORY" for tools you don't fully control.
@@ -142,9 +164,10 @@ Note: "RECOMMENDED" not "MANDATORY" for tools you don't fully control.
 ## Session Telemetry
 At the end of every session, append one JSONL line to ~/.easyway/session-telemetry.jsonl:
 
-{"session":"ID","agent":"AGENT_NAME","date":"YYYY-MM-DD","start":"HH:MM","duration_min":N,"items_completed":N,"commits":N,"prs":N,"context_held":true/false,"compacting_count":N,"notes":"what was done"}
+{"sid":"ew-YYYYMMDD-AGENT-HHmm","session":"ID","agent":"AGENT_NAME","date":"YYYY-MM-DD","start":"HH:MM","duration_min":N,"items_completed":N,"commits":N,"prs":N,"context_held":true/false,"compacting_count":N,"notes":"what was done"}
 
-Fields: session (ID), agent (name), date, start time, duration (minutes), items completed, commits, PRs, context_held (did context last?), compacting_count (0=no compression), notes.
+SID formula: ew-{YYYYMMDD}-{agent}-{HHmm} (deterministic, cross-agent, no vendor dependency).
+Fields: sid (atomic ID), session (project ID), agent (name), date, start, duration, items, commits, PRs, context_held, compacting_count (0=no compression), notes.
 ```
 
 ## What to Measure: Before vs After
