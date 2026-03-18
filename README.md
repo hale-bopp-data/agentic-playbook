@@ -110,6 +110,16 @@ Each principle comes with **diagnostic questions** — the real value. Example:
 > *"Are we confusing 'no problems found' with 'no problems exist'?"*
 > *"Are our tests strong enough to find the black swans?"*
 
+### [Recipes](recipes/) — Step-by-step operational guides
+
+| Recipe | What it solves | Time |
+|--------|---------------|------|
+| [Governance Testuggine](recipes/governance-testuggine.md) | Context rot across repos — 3-layer defense (rules + monitoring + human review) | 2-4h |
+| [Context Diet (Matrioska)](recipes/context-diet-matrioska.md) | Agent memory bloat — 3-level compression (index → category → detail) | 30-60m |
+| [Workspace Onboarding](recipes/workspace-onboarding.md) | New agent takes 75s to orient — workspace map cuts it to 0s | 15m |
+| [Iron Dome Setup](recipes/iron-dome-setup.md) | Secrets, conflicts, unsafe commands slip through — pre-commit guardrails | 10m |
+| [Context Sync with n8n](recipes/context-sync-n8n.md) | Context files drift across repos — automated sync from master template | 1h |
+
 ### [Templates](templates/) — Copy and go
 
 | File | Purpose |
@@ -288,6 +298,12 @@ agentic-playbook/
 │   ├── cursorrules.template.md       # Starter .cursorrules
 │   ├── semaphore.schema.json         # Repo lock schema
 │   └── gedi-manifest.template.json   # Ethics advisor (fork with your principles)
+├── recipes/
+│   ├── governance-testuggine.md      # 3-layer anti context rot
+│   ├── context-diet-matrioska.md     # Memory compression pattern
+│   ├── workspace-onboarding.md       # Bootstrap workspace map
+│   ├── iron-dome-setup.md            # Pre-commit safety hooks
+│   └── ...                           # 15 more operational recipes
 ├── evidence/
 │   └── case-studies.md               # Real cases (anonymized)
 └── reddit/
